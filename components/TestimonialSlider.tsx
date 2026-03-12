@@ -48,44 +48,33 @@ export default function TestimonialSlider() {
   }, [current, goTo])
 
   return (
-    <div>
-      <div style={{ overflow: 'hidden' }}>
+    <div className="testimonials">
+      <div className="testimonials__track">
         <div
           className="testimonials__slides"
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {testimonials.map((t, i) => (
             <div key={i} className="testimonial-slide">
-              <div
-                className="mx-auto text-center rounded-3xl"
-                style={{
-                  maxWidth: '800px',
-                  padding: '56px 48px',
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                }}
-              >
-                <div className="flex justify-center gap-1 mb-7 text-xl" style={{ color: '#fbbf24' }}>★★★★★</div>
-                <p
-                  className="mb-8 italic"
-                  style={{ fontSize: '1.18rem', lineHeight: 1.72, color: 'var(--white-80)' }}
-                >
+              <div className="testimonial-card">
+                <div className="testimonial-card__stars">★★★★★</div>
+                <p className="testimonial-card__quote">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <strong className="block text-base font-semibold">{t.author}</strong>
-                <span style={{ fontSize: '0.88rem', color: 'var(--lavender)' }}>{t.source}</span>
+                <div className="testimonial-card__author">
+                  <strong>{t.author}</strong>
+                  <span>{t.source}</span>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Navigation */}
-      <div className="flex justify-center items-center gap-4 mt-10">
+      <div className="testimonials__nav">
         <button
           onClick={() => goTo(current - 1)}
-          className="flex items-center justify-center rounded-full w-11 h-11 transition-all"
-          style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff' }}
+          className="testimonials__arrow"
           aria-label="Previous"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" width="18" height="18">
@@ -97,22 +86,14 @@ export default function TestimonialSlider() {
           <button
             key={i}
             onClick={() => goTo(i)}
-            className="rounded-full transition-all"
-            style={{
-              width: i === current ? '28px' : '8px',
-              height: '8px',
-              borderRadius: i === current ? '4px' : '50%',
-              background: i === current ? 'var(--lavender)' : 'rgba(255,255,255,0.2)',
-              border: 'none',
-            }}
+            className={`testimonials__dot${i === current ? ' active' : ''}`}
             aria-label={`Go to testimonial ${i + 1}`}
           />
         ))}
 
         <button
           onClick={() => goTo(current + 1)}
-          className="flex items-center justify-center rounded-full w-11 h-11 transition-all"
-          style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff' }}
+          className="testimonials__arrow"
           aria-label="Next"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" width="18" height="18">
