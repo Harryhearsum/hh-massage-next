@@ -2,7 +2,9 @@ name: Generate Daily Blog Post
 
 on:
   schedule:
-    - cron: '0 5 * * *'  # 5 AM UTC daily
+    - cron: '0 6 * * 1'   # Monday 6 AM UTC
+    - cron: '30 5 * * 3'  # Wednesday 5:30 AM UTC
+    - cron: '0 7 * * 5'   # Friday 7 AM UTC
   workflow_dispatch:  # Manual trigger
 
 jobs:
@@ -33,4 +35,4 @@ jobs:
           git config user.name "Blog Bot"
           git config user.email "blog-bot@hhmassagetherapy.co.uk"
           git add content/blog/ data/topics-used.json
-          git diff --staged --quiet || (git commit -m "Add daily blog post $(date +%Y-%m-%d)" && git push)
+          git diff --staged --quiet || (git commit -m "Add blog post $(date +%Y-%m-%d)" && git push)
