@@ -22,6 +22,7 @@ export default function Nav() {
     { href: '/treatments', label: 'Treatments' },
     { href: '/corporate', label: 'Corporate' },
     { href: '/about', label: 'About' },
+    { href: '/blog', label: 'Blog' },
   ]
 
   const isActive = (href: string) =>
@@ -70,7 +71,7 @@ export default function Nav() {
           <a
             href={BOOK_URL}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             className="btn btn-primary"
             style={{ padding: '10px 22px' }}
           >
@@ -112,7 +113,7 @@ export default function Nav() {
         <a
           href={BOOK_URL}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           onClick={closeMobile}
           className="btn btn-primary"
         >

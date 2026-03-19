@@ -42,7 +42,7 @@ export default function AboutPage() {
               <span className="label">The Story</span>
               <h2>Why We Exist</h2>
               <p style={{ marginTop: '24px', marginBottom: '20px', fontSize: '1.05rem' }}>
-                Too many practices offering massage as relaxation with a sports-sounding name. Too many generic treatments with no real assessment. Too little pressure, too much talking, too few results.
+                Too many practices offering massage as relaxation with a sports-sounding name. Too many generic treatments with no real assessment. Too little pressure, too little communication, too few results.
               </p>
               <p style={{ marginBottom: '20px' }}>
                 We exist to do it properly. From the treatment table to the booking process, every decision at HH is made with one question in mind: does this produce a better outcome for the client?
@@ -141,7 +141,7 @@ export default function AboutPage() {
                 Every decision we make now is made with that standard in mind. The same treatment quality. The same level of care. Scaled.
               </p>
               <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href={BOOK_URL} target="_blank" rel="noopener" className="btn btn-primary btn-lg">
+                <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
                   Book a Session &rarr;
                 </a>
                 <Link href="/corporate" className="btn btn-ghost btn-lg">
@@ -177,7 +177,7 @@ export default function AboutPage() {
         <span className="label">Ready?</span>
         <h2>Experience the Difference.</h2>
         <p>Book your first session and find out why our clients keep coming back.</p>
-        <a href={BOOK_URL} target="_blank" rel="noopener" className="btn btn-primary btn-lg">
+        <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
           Book Your Treatment Now
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
         </a>

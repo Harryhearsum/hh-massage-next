@@ -40,7 +40,8 @@ export default function Footer() {
             <ul>
               <li><Link href="/about">About Us</Link></li>
               <li><Link href="/corporate">Corporate Wellness</Link></li>
-              <li><a href={BOOK_URL} target="_blank" rel="noopener">Book Online</a></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li><a href={BOOK_URL} target="_blank" rel="noopener noreferrer">Book Online</a></li>
             </ul>
           </div>
 
@@ -49,7 +50,7 @@ export default function Footer() {
             <h5>Location</h5>
             <ul>
               <li>
-                <a href={MAPS_URL} target="_blank" rel="noopener">
+                <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
                   Rotherham Studio &rarr;
                 </a>
               </li>
@@ -61,9 +62,9 @@ export default function Footer() {
         <div className="footer__bottom">
           <p>&copy; 2025 HH Massage Therapy. All rights reserved.</p>
           <div className="footer__legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms</a>
-            <a href="#">Cookie Policy</a>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms</Link>
+            <Link href="/cookies">Cookie Policy</Link>
           </div>
         </div>
       </div>

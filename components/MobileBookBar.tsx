@@ -6,7 +6,7 @@ export default function MobileBookBar() {
       <a
         href={BOOK_URL}
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         className="btn btn-primary"
       >
         Book Your Session &rarr;

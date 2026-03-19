@@ -1,0 +1,36 @@
+name: Generate Daily Blog Post
+
+on:
+  schedule:
+    - cron: '0 5 * * *'  # 5 AM UTC daily
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate blog post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BLOG_GENERATION_ENABLED: ${{ secrets.BLOG_GENERATION_ENABLED }}
+        run: npx tsx scripts/generate-post.ts
+
+      - name: Commit and push new post
+        run: |
+          git config user.name "Blog Bot"
+          git config user.email "blog-bot@hhmassagetherapy.co.uk"
+          git add content/blog/ data/topics-used.json
+          git diff --staged --quiet || (git commit -m "Add daily blog post $(date +%Y-%m-%d)" && git push)

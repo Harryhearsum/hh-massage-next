@@ -140,7 +140,7 @@ export default function TreatmentsPage() {
                   <a
                     href={t.url}
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     className={`btn ${t.popular ? 'btn-primary' : 'btn-ghost'}`}
                     style={{ marginTop: '16px' }}
                   >
@@ -185,7 +185,7 @@ export default function TreatmentsPage() {
               <p style={{ marginTop: '20px' }}>
                 Still unsure? Read the questions we get asked most. Or just book the 60-minute — it&apos;s the right choice for almost everyone.
               </p>
-              <a href={BOOK_URL} target="_blank" rel="noopener" className="btn btn-primary" style={{ marginTop: '32px' }}>
+              <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ marginTop: '32px' }}>
                 Book a Session &rarr;
               </a>
             </div>
@@ -203,7 +203,7 @@ export default function TreatmentsPage() {
         <span className="label">Book Your Session</span>
         <h2>Your Tightest Muscles<br />Are Waiting.</h2>
         <p>Book in under two minutes.</p>
-        <a href={BOOK_URL} target="_blank" rel="noopener" className="btn btn-primary btn-lg">
+        <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
           Book Your Treatment Now
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
         </a>

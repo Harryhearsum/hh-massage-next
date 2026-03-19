@@ -15,19 +15,31 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="hero">
+      <section className="hero hero--video">
+        {/* Background video */}
+        <video
+          className="hero__video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src="/videos/broll.mp4" type="video/mp4" />
+        </video>
+        <div className="hero__overlay" />
         <div className="container">
           <div className="hero__inner">
-            <div className="hero__badge">Rotherham · Sports Recovery · Deep Tissue Therapy</div>
+            <div className="hero__badge">Rotherham · Sports Recovery · <span className="hero__badge-break" />Deep Tissue Therapy</div>
             <h1>
               Your Body Works Hard.<br />
-              <em>So Does Your Treatment.</em>
+              <em>So Should Your Treatment.</em>
             </h1>
             <p className="hero__sub">
               Sports massage and deep tissue therapy built for performance, recovery, and real results. Not a spa. Not a clinic. Something better.
             </p>
             <div className="hero__ctas">
-              <a href={BOOK_URL} target="_blank" rel="noopener" className="btn btn-primary btn-lg">
+              <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
                 Book Your Session
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" width="18" height="18"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
               </a>
@@ -60,7 +72,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center" style={{ marginBottom: '56px' }}>
             <span className="label">Who We Treat</span>
-            <h2>Built For People<br />Refusing to Live in Pain</h2>
+            <h2>Built for People<br />Refusing to Live in Pain</h2>
           </div>
           <div className="audience-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
             <div className="audience-card">
@@ -111,7 +123,7 @@ export default function Home() {
             </div>
             <div className="stat-item">
               <div className="stat-item__value">9am–9pm</div>
-              <div className="stat-item__label">Slots open to fit YOUR schedule</div>
+              <div className="stat-item__label">Slots open to fit your schedule</div>
             </div>
             <div className="stat-item">
               <div className="stat-item__value">Rotherham</div>
@@ -126,9 +138,9 @@ export default function Home() {
       {/* THE HH DIFFERENCE */}
       <section className="section">
         <div className="container">
-          <div style={{ marginBottom: '56px' }}>
+          <div className="text-center" style={{ marginBottom: '56px' }}>
             <span className="label">Why HH Massage Therapy</span>
-            <h2 style={{ maxWidth: '680px' }}>
+            <h2>
               This Isn&apos;t Standard Therapy.<br />This Is Performance Recovery.
             </h2>
           </div>
@@ -152,6 +164,13 @@ export default function Home() {
               <div>
                 <h4>Based in Rotherham</h4>
                 <p>Private studio in the heart of Rotherham. Flexible scheduling with early mornings, evenings, and weekend slots available — because recovery doesn&apos;t wait for business hours.</p>
+              </div>
+            </div>
+            <div className="diff-item">
+              <div className="diff-item__num">04</div>
+              <div>
+                <h4>Results Driven Treatments</h4>
+                <p>Every session is built around identifying the root cause of your tension, not just temporarily easing symptoms. By targeting the muscles and movement patterns creating the problem, treatments are designed to deliver lasting relief and improved performance.</p>
               </div>
             </div>
           </div>
@@ -179,7 +198,7 @@ export default function Home() {
               <div className="service-card__price">
                 &pound;30 <span>/ session</span>
               </div>
-              <a href="https://book.squareup.com/appointments/rz59xehpau07vg/location/L7D39225FBMR9/services/HTDAWTBQHKUVKGOJAYQHUIGH" target="_blank" rel="noopener" className="btn btn-ghost">
+              <a href="https://book.squareup.com/appointments/rz59xehpau07vg/location/L7D39225FBMR9/services/HTDAWTBQHKUVKGOJAYQHUIGH" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
                 Book Now &rarr;
               </a>
             </div>
@@ -191,7 +210,7 @@ export default function Home() {
               <div className="service-card__price">
                 &pound;40 <span>/ session</span>
               </div>
-              <a href="https://book.squareup.com/appointments/rz59xehpau07vg/location/L7D39225FBMR9/services/IBAKBSHJ6EXJ3AIQ6LA6DYMU" target="_blank" rel="noopener" className="btn btn-ghost">
+              <a href="https://book.squareup.com/appointments/rz59xehpau07vg/location/L7D39225FBMR9/services/IBAKBSHJ6EXJ3AIQ6LA6DYMU" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
                 Book Now &rarr;
               </a>
             </div>
@@ -204,7 +223,7 @@ export default function Home() {
               <div className="service-card__price">
                 &pound;50 <span>/ session</span>
               </div>
-              <a href="https://book.squareup.com/appointments/rz59xehpau07vg/location/L7D39225FBMR9/services/7MNSH64D2X5CJICZSJIRDODX" target="_blank" rel="noopener" className="btn btn-primary">
+              <a href="https://book.squareup.com/appointments/rz59xehpau07vg/location/L7D39225FBMR9/services/7MNSH64D2X5CJICZSJIRDODX" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 Book Now &rarr;
               </a>
             </div>
@@ -216,7 +235,7 @@ export default function Home() {
               <div className="service-card__price">
                 &pound;65 <span>/ session</span>
               </div>
-              <a href="https://book.squareup.com/appointments/rz59xehpau07vg/location/L7D39225FBMR9/services/DR3PZBCHIHE3QDGPIPOUUIQY" target="_blank" rel="noopener" className="btn btn-ghost">
+              <a href="https://book.squareup.com/appointments/rz59xehpau07vg/location/L7D39225FBMR9/services/DR3PZBCHIHE3QDGPIPOUUIQY" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
                 Book Now &rarr;
               </a>
             </div>
@@ -280,8 +299,8 @@ export default function Home() {
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '24px' }}>
-                <a href={BOOK_URL} target="_blank" rel="noopener" className="btn btn-primary" style={{ flex: 1, justifyContent: 'center' }}>Book Now &rarr;</a>
-                <a href={MAPS_URL} target="_blank" rel="noopener" className="btn btn-ghost" style={{ flex: 1, justifyContent: 'center' }}>Get Directions &rarr;</a>
+                <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ flex: 1, justifyContent: 'center' }}>Book Now &rarr;</a>
+                <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ flex: 1, justifyContent: 'center' }}>Get Directions &rarr;</a>
               </div>
             </div>
             <GoogleMap />
@@ -298,7 +317,7 @@ export default function Home() {
         <p>
           Book online in under two minutes. Card payments accepted.
         </p>
-        <a href={BOOK_URL} target="_blank" rel="noopener" className="btn btn-primary btn-lg">
+        <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
           Book Your Treatment Now
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" width="18" height="18"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
         </a>
